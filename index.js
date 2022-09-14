@@ -25,6 +25,18 @@ connection
     console.log("Db not connected!");
   });
 
+  app.post('/v1/signup', async (req, res) => {
+    const email = req.body.loginId; //The unique id of a user in your database, usually email or phone
+    const ownIdData = req.body.ownIdData; //OwnID authentication information as string
+    console.log(req.body,"dfsdf");
+    const user = new User({
+      email: loginId
+    });
+    user.ownIdData = ownIdData;
+    await user.save();
+    return res.sendStatus(204);
+});
+
 app.post('/v1/setOwnIDDataByLoginId', async (req, res) => {
     const email = req.body.loginId; //The unique id of a user in your database, usually email or phone
     const ownIdData = req.body.ownIdData; //OwnID authentication information as string
