@@ -10,6 +10,8 @@ const server = require("http").createServer(app);
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
+const SharedSecret  = "CJUf6HVMRxbcRFCvAphnpCDY3cjo3DJgwj4s2DsID+yZD1ZAhM1MktsDFDu6V97dyI7yj4368rBmBnKEHX+AqQ=="
+const appId = "2c36rxgrff2ewu"
 app.use(cors());
 
 connection
